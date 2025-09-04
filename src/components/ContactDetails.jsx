@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { ContactContext } from "../App";
 
 function ContactDetails() {
@@ -33,9 +33,15 @@ function ContactDetails() {
             <h2><strong>Contact Details</strong></h2>
             <h3><u>{contact.firstName} {contact.lastName}</u></h3>
             <div>
-                <p><strong>Address:</strong> {contact.street}</p>
+                <img className="profile-image" src={contact.profileImage} alt={`${contact.firstName} ${contact.lastName}`}/>
+                <p><strong>Address:</strong> {contact.street}</p> 
                 <p><strong>City:</strong> {contact.city}</p>
+                <p><strong>Email:</strong> {contact.email}</p>
+                <p><strong>Gender:</strong> {contact.gender}</p>
+                <p><strong>Job:</strong> {contact.jobTitle}</p>
+                <p><strong>Favourite Color:</strong> {contact.favouriteColour}</p>
                 <button onClick={handleDelete}>Delete Contact</button>
+                <button><Link to={`/edit/${contact.id}`}>Edit Contact</Link></button>
             </div>
         </div>
     );

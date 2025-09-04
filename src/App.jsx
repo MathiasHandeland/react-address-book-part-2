@@ -4,6 +4,7 @@ import { useState, useEffect, createContext } from 'react'
 import ContactList from './components/ContactList';
 import ContactDetails from './components/ContactDetails';
 import AddContact from './components/AddContact';
+import EditContact from './components/EditContact';
 
 export const ContactContext = createContext();
 
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/contacts" element={<ContactList />} />
                 <Route path="/add" element={<AddContact />} />
                 <Route path="/contact/:id" element={<ContactDetails />} />
+                <Route path="/edit/:id" element={<EditContact />} />
             </Routes>
             </div>
         </div>
