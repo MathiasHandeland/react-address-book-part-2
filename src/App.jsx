@@ -25,7 +25,7 @@ function App() {
     <ContactContext.Provider value={{ contactList, setContactList, url }}>
         <div className="app-container">
             <div className="sidebar">
-            <h2>Menu</h2>
+            <h2><strong>Menu</strong></h2>
             <ul>
                 <li><Link to="/contacts">Contacts List</Link></li>
                 <li><Link to="/add">Add New Contact</Link></li>

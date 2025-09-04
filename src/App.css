@@ -11,7 +11,7 @@
 }
 
 .main-content {
-    padding: 15px;
+    padding: 20px;
 }
 
 .form-group {
@@ -42,3 +42,9 @@ button {
     object-fit: cover;
 }
 
+.search-input-bar {
+    width: 230px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
