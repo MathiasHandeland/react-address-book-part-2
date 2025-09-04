@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ContactContext } from "../App";
+import LocationMap from "./LocationMap";
 
 function ContactDetails() {
     const { contactList, setContactList, url } = useContext(ContactContext);
@@ -36,6 +37,7 @@ function ContactDetails() {
                 <img className="profile-image" src={contact.profileImage} alt={`${contact.firstName} ${contact.lastName}`}/>
                 <p><strong>Address:</strong> {contact.street}</p> 
                 <p><strong>City:</strong> {contact.city}</p>
+                <LocationMap latitude={contact.latitude} longitude={contact.longitude} />
                 <p><strong>Email:</strong> {contact.email}</p>
                 <p><strong>Gender:</strong> {contact.gender}</p>
                 <p><strong>Job:</strong> {contact.jobTitle}</p>

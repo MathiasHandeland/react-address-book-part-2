@@ -26,7 +26,7 @@ function AddContact() {
     <div>
       <h2>Create Contact</h2>
       <ContactForm
-        initialData={{ firstName: "", lastName: "", street: "", city: "", email: "", gender: "", jobTitle: "", favouriteColour: "", profileImage: "https://www.gravatar.com/avatar/Ellis.Towne@gmail.com?s=120&d=identicon" }}
+        initialData={{ firstName: "", lastName: "", street: "", city: "", email: "", gender: "", jobTitle: "", favouriteColour: "", profileImage: "https://www.gravatar.com/avatar/Ellis.Towne@gmail.com?s=120&d=identicon", latitude: "", longitude: "" }}
         onSubmit={handleAdd}
         buttonLabel="Add Contact"
       />

@@ -11,7 +11,11 @@ function ContactForm({ initialData, onSubmit, buttonLabel }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    if (name === "latitude" || name === "longitude") {
+      setFormData(prev => ({ ...prev, [name]: parseFloat(value) }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -108,6 +112,30 @@ function ContactForm({ initialData, onSubmit, buttonLabel }) {
             type="text"
             name="favouriteColour"
             value={formData.favouriteColour}
+            onChange={handleChange}
+            required
+            />
+        </div>
+
+        <div className="form-group">
+            <label><strong>Latitude:</strong></label>
+            <input
+            type="number"
+            step="any"
+            name="latitude"
+            value={formData.latitude}
+            onChange={handleChange}
+            required
+            />
+        </div>
+
+        <div className="form-group">
+            <label><strong>Longitude:</strong></label>
+            <input
+            type="number"
+            step="any"
+            name="longitude"
+            value={formData.longitude}
             onChange={handleChange}
             required
             />
