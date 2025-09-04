@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { useState, useEffect, createContext } from 'react'
 import ContactList from './components/ContactList';
 import ContactDetails from './components/ContactDetails';
+import AddContact from './components/AddContact';
 
 export const ContactContext = createContext();
 
@@ -12,7 +13,7 @@ function App() {
 
     useEffect(() => {
         const fetchContacts = async () => {
-            const response = await fetch(url);
+            const response = await fetch(url); 
             const data = await response.json();
             setContactList(data);
         };
@@ -20,7 +21,7 @@ function App() {
     }, []);
 
   return (
-    <ContactContext.Provider value={{ contactList, setContactList }}>
+    <ContactContext.Provider value={{ contactList, setContactList, url }}>
         <div className="app-container">
             <div className="sidebar">
             <h2>Menu</h2>
@@ -32,6 +33,7 @@ function App() {
             <div className="main-content">
             <Routes>
                 <Route path="/contacts" element={<ContactList />} />
+                <Route path="/add" element={<AddContact />} />
                 <Route path="/contact/:id" element={<ContactDetails />} />
             </Routes>
             </div>
