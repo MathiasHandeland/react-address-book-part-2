@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from "react";
 
 function ContactForm({ initialData, onSubmit, buttonLabel }) {
   const [formData, setFormData] = useState(initialData);
 
-  // Update form if initialData changes
+  // Dynamically update form when initialData changes
   useEffect(() => {
     setFormData(initialData);
   }, [initialData]);
@@ -80,7 +79,7 @@ function ContactForm({ initialData, onSubmit, buttonLabel }) {
             />
         </div>
 
-            <div className="form-group">
+        <div className="form-group">
             <label><strong>Gender:</strong></label>
             <select
             name="gender"

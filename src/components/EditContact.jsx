@@ -10,8 +10,10 @@ function EditContact() {
   const { id } = useParams();
   const contactToEdit = contactList.find(c => c.id === Number(id));
 
+  if (!contactToEdit) return <p>Contact not found</p>;
+  
   const handleUpdate = async (formData) => {
-    const response = await fetch(`${url}/${formData.id}`, {
+    const response = await fetch(`${url}/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -25,8 +27,6 @@ function EditContact() {
       navigate(`/contact/${updated.id}`);
     }
   };
-
-  if (!contactToEdit) return <p>Contact not found</p>;
 
   return (
     <div>

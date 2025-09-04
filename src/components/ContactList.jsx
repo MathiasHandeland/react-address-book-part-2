@@ -7,7 +7,7 @@ function ContactList() {
     const [searchTerm, setSearchTerm] = useState("");
 
     return (
-        <div>
+        <div className="contact-list">
             <h2><strong>Contact List</strong></h2>
             <input className="search-input-bar" type="text" placeholder="Search contact by first or last name" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
 
